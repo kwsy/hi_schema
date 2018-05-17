@@ -16,18 +16,27 @@
 
 # 示例代码
 ```python
+# coding=utf-8
 from data_check import Data_Check
 
 # 使用一个正确的数据初始化对象
-data = {"age": {"age": 10, 'data': [{"data": {"key1": 323, 'key2':323}}, {"data": {"key1": 323, 'key2':323}}]}}
+data = {'age': {'age': 10,
+         'data': [{'data': {'key1': 323, 'key2': 323}},
+                  {'data': {'key1': 323, 'key2': 323}}]
+                }
+        }
 dc = Data_Check(data)
 
 # 对新的数据进行检查
-check_data = {"age": {"age": 10, 'data': [{"data": {"key1": 323, 'key3':323}}, {"data": {"key1": 323, 'key2':323}}]}}
+check_data = {'age': {'age': 10,
+         'data': [{'data': {'key1': 323, 'key2': 323}},
+                  {'data': {'key1': 323, 'key2': '323'}}]
+                      }
+              }
 dc.check_data(check_data)
 ```
 
 程序抛出的异常会准确说明那个字段的数据发生了错误
 
-__main__.KeyLostErr: key2 is lost , keys of data is ['key3', 'key1']
+data_check.DataTypeErr: data type is <type 'str'> but expect type is number the err value is 323
 
