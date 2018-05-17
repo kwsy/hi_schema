@@ -27,7 +27,7 @@ data = {'age': {'age': 10,
         }
 dc = Data_Check(data)
 
-# 对新的数据进行检查
+# 对新的数据进行检查  key2这个字段的值发生了变化
 check_data = {'age': {'age': 10,
          'data': [{'data': {'key1': 323, 'key2': 323}},
                   {'data': {'key1': 323, 'key2': '323'}}]
